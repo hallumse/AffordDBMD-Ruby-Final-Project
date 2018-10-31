@@ -1,11 +1,10 @@
-class ResourceController < ApplicationController
+class ResourcesController < ApplicationController
   def index
     @resources = Resource.all
   end
 
   def new
    @resources = Resource.new
-   @subjects = Subject.all
   end
 
   def create

@@ -1,6 +1,11 @@
-class Admin::EventController < ApplicationController
+class Admin::EventsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @events = Event.all
+  end
+
+  def new
+    @events = Event.new
   end
 
   def show

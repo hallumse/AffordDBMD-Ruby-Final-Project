@@ -1,6 +1,7 @@
-class SupplyController < ApplicationController
+class SuppliesController < ApplicationController
   def index
     @supplies = Supply.all
+    @supplies = Supply.search (params[:search])
   end
 
   def show
@@ -8,6 +9,6 @@ class SupplyController < ApplicationController
   end
 
   def new
-
+    @supplies = Supply.new
   end
 end

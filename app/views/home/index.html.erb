@@ -1,1 +1,7 @@
-hey tori
+<h1> Welcome To AffordDBMD </h1>
+ <p class="lead">Use this postcode search to quickly find discounts on diabetic supplies in your area</p>
+  <p><%= form_tag supplies_path, :method => :get do %>
+    <%= text_field_tag :search, params[:search], placeholder: "e.g M20 2WZ" %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+  <% end %>

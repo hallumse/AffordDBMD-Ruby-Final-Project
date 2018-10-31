@@ -1,6 +1,11 @@
-class Admin::ResourceController < ApplicationController
+class Admin::ResourcesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @resources = Resource.all
+  end
+
+  def new
+    @resources = Resource.new
   end
 
   def show
