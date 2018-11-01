@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_191400) do
+ActiveRecord::Schema.define(version: 2018_10_31_205857) do
+
+  create_table "discounts", force: :cascade do |t|
+    t.string "brand"
+    t.string "form"
+    t.string "dosage"
+    t.string "quantity"
+    t.string "price"
+    t.string "pharmacy"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "supply_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "location"

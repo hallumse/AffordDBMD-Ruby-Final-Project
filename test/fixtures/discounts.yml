@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  form: MyString
+  dosage: MyString
+  quantity: MyString
+  price: MyString
+  pharmacy: MyString
+
+two:
+  brand: MyString
+  form: MyString
+  dosage: MyString
+  quantity: MyString
+  price: MyString
+  pharmacy: MyString

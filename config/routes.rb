@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :supplies
   end
   resources :supplies, only: [:show, :index]
+  resources :events, only: [:show, :index]
+  resources :resources, only: [:show, :index]
 end

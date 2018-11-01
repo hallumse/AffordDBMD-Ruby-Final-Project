@@ -2,6 +2,7 @@ class Admin::SuppliesController < ApplicationController
   before_action :authenticate_user!
   def index
     @supplies = Supply.all
+    # @supplies = Supply.search (params[:search])
   end
 
   def new

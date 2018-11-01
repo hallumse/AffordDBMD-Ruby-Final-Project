@@ -1,7 +1,10 @@
 <h1> Welcome To AffordDBMD </h1>
- <p class="lead">Use this postcode search to quickly find discounts on diabetic supplies in your area</p>
+
+ <%= link_to 'Events', controller: 'events' %> <%= link_to 'Resources', controller: 'resources' %>
+
+ <p class="lead">Use This Search To Quickly Find Discounts On Diabetic Medications And Testing Supplies In Your Area: </p>
   <p><%= form_tag supplies_path, :method => :get do %>
-    <%= text_field_tag :search, params[:search], placeholder: "e.g M20 2WZ" %>
-    <%= submit_tag "Search Near", :name => nil %>
+    <%= text_field_tag :search, params[:search], placeholder: "e.g. Testing Strips" %>
+    <%= submit_tag "Search", :name => nil %>
   </p>
   <% end %>
