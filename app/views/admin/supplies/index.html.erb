@@ -1,13 +1,14 @@
 <div class="c-section">
-  <h1 class="c-title c-title--large">Diabetic Discounts Supply List</h1>
+  <h1 class="c-title c-title--large">Discounts on Diabetic Medications and Testing Supplies:</h1>
 </div>
 <div class="c-section">
   <% @supplies.each do |supply| %>
+  hey
     <div class="c-card u-margin-bottom-small">
       <div class="c-section">
         <h4 class="c-title"><%= supply.name %></h4>
-        <h4 class="c-title c-title--tiny"><%= supply.price %></h4>
-        <h4 class="c-title c-title--tiny">$<%= book.upc %></h4>
+        <h4 class="c-title c-title--tiny">$<%= supply.upc %></h4>
+        <%= paginate @supplies %>
       </div>
     </div>
   <% end %>

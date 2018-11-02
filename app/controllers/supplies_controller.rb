@@ -1,6 +1,8 @@
 class SuppliesController < ApplicationController
   def index
-    @supplies = Supply.all
+    # @supplies = Supply.all
+
+    @supplies = Supply.order(:name).page(params[:page])
     # @supplies = Supply.search (params[:search])
   end
 

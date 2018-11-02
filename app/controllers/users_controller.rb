@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def index
+
     # PurchaseMailer.with(user: User.first).thank_you.deliver_later
 
     # @current_page = params[:page] || 1
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
     @users = User.page(@current_page)
     @prev_page = User.page(@current_page).prev_page
     @next_page = User.page(@current_page).next_page
+   end
   end
 
   def styleguide

@@ -6,8 +6,8 @@
     <div class="c-card u-margin-bottom-small">
       <div class="c-section">
         <h4 class="c-title"><%= supply.name %></h4>
-        <h4 class="c-title c-title--tiny"><%= supply.price %></h4>
-        <h4 class="c-title c-title--tiny">$<%= book.upc %></h4>
+        <h4 class="c-title c-title--tiny">$<%= supply.upc %></h4>
+        <%= paginate @supplies %>
       </div>
     </div>
   <% end %>

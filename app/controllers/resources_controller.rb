@@ -16,6 +16,7 @@ class ResourcesController < ApplicationController
       @subjects = Subject.all
       render :action => 'new'
    end
+  end
 
    def edit
     @resources = Resource.find(params[:title] [:url] [:category])
@@ -23,13 +24,14 @@ class ResourcesController < ApplicationController
    end
 
    def update
-   @resources = Resource.find(params[:title] [:url] [:category])
+    @resources = Resource.find(params[:title] [:url] [:category])
 
-   if @resources.update_attributes(resources_param)
+    if @resources.update_attributes(resources_param)
       redirect_to :action => 'show', :link => @resources
-   else
+    else
       @subjects = Subject.all
       render :action => 'edit'
+    end
    end
 
   def resource_params
