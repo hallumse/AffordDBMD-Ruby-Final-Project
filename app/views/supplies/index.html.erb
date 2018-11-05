@@ -7,8 +7,8 @@
       <div class="c-section">
         <h4 class="c-title"><%= supply.name %></h4>
         <h4 class="c-title c-title--tiny">$<%= supply.upc %></h4>
-        <%= paginate @supplies %>
       </div>
     </div>
   <% end %>
+  <%= paginate @supplies %>
 </div>
