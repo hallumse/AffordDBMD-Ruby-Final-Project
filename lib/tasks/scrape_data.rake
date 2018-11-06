@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+
 desc "Adds WellRx Diabetic Prescriptions To Database"
 task add_prescriptions: :environment do
   drug_params = [
@@ -31,6 +34,10 @@ task add_prescriptions: :environment do
 
   base_url = "https://www.wellrx.com/prescriptions/"
 
-  response = HTTParty.get("#{base_url}/#{drug_params[0]}/?address=#{zip_codes[0]}")
+  # response = HTTParty.get("#{base_url}/#{drug_params[0]}/?address=#{zip_codes[0]}")
+  html = Nokogiri::HTML(open("#{base_url}/#{drug_params[0]}/?address=#{zip_codes[0]}"))
+  # The below gets to the right section of the html but isn't showing any child elements even though
+  # we know they exist.
+  html.css("div.tabs-content").css("section#res")
   byebug
 end
