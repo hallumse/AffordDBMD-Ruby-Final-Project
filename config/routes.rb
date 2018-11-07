@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :resources
     resources :supplies
   end
+
+  get '/search', to: "home#search"
   resources :supplies, only: [:show, :index]
   resources :events, only: [:show, :index]
   resources :resources, only: [:show, :index]

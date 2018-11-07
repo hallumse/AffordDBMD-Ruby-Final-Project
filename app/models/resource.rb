@@ -1,3 +1,3 @@
 class Resource < ApplicationRecord
-  CATEGORIES = ["Diabetic Supplies", "Insurance", "Providers", "Miscellaneous"]
+  CATEGORIES = ["Diabetic Supplies", "Providers", "Miscellaneous"]
 end

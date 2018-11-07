@@ -1,0 +1,7 @@
+<%= form_for [:admin, @supply] do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :upc %>
+  <%= form.text_field :upc %>
+  <%= form.submit %>
+<% end %>

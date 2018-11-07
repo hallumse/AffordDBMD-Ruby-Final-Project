@@ -8,9 +8,9 @@ class Admin::EventsController < ApplicationController
     @events = Event.new
   end
 
-  def show
-    @events = Event.find(params[:location] [:time])
-  end
+  # def show
+  #   @events = Event.find(params[:location] [:time])
+  # end
 
   def update
    @events = Event.find(params[:location] [:time])

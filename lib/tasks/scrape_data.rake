@@ -35,7 +35,7 @@ task add_prescriptions: :environment do
   base_url = "https://www.wellrx.com/prescriptions/"
 
   # response = HTTParty.get("#{base_url}/#{drug_params[0]}/?address=#{zip_codes[0]}")
-  html = Nokogiri::HTML(open("#{base_url}/#{drug_params[0]}/?address=#{zip_codes[0]}"))
+  html = Nokogiri::HTML(open("https://www.wellrx.com/prescriptions/acarbose/?address=29305"))
   # The below gets to the right section of the html but isn't showing any child elements even though
   # we know they exist.
   html.css("div.tabs-content").css("section#res")

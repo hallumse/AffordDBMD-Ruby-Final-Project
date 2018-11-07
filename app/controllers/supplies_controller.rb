@@ -3,11 +3,12 @@ class SuppliesController < ApplicationController
     # @supplies = Supply.all
 
     @supplies = Supply.order(:name).page(params[:page])
-    # @supplies = Supply.search (params[:search])
+    @supplies = Supply.search (params[:search])
   end
 
   def show
-    @supplies = Supply.find(params[:name] [:price] [:upc])
+    @supply = Supply.find(params[:id])
+    end
   end
 
   def new

@@ -7,31 +7,39 @@ class Admin::SuppliesController < ApplicationController
   end
 
   def new
-    @supplies = Supply.new
+    @supply = Supply.new
   end
 
   def show
-    @supplies = Supply.find(params[:name] [:price] [:upc])
+    @supply = Supply.find(params[:name] [:price] [:upc])
   end
 
   def update
-   @supplies = Supply.find(params[:name] [:price] [:upc])
-   @supplies.name = params[:price][:upc]
-   @supplies.save
-   redirect_to supplies_path(@supplies)
+   @supply = Supply.find(params[:id])
+   @supply.update(supply_params)
+   redirect_to supply_path(@supply)
   end
 
   def create
-    Supply.create(name: params[:price][:upc])
-    redirect_to supplies_path
+    supply = Supply.new(supply_params)
+    if supply.save
+      redirect_to supplies_path
+    else
+      render :new
+    end
   end
 
   def edit
-    @suppplies = Supply.find(params[:name] [:price] [:upc])
+    @supply = Supply.find(params[:id])
   end
 
   def destroy
    Supply.find(params[:name] [:price] [:upc]).destroy
    redirect_to supplies_path
+  end
+
+private
+  def supply_params
+    params.require(:supply).permit(:name, :upc)
   end
 end

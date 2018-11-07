@@ -1,1 +1,41 @@
-<h1> List of Diabetes Specific Resources: </h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AffordDBMBEtoria</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <h1> List of Diabetes Specific Resources: </h1>
+
+  <div>
+    <h2> Diabetes Care Providers In Your Area: </h2>
+    <div class="logos_1">
+      <%= image_tag("logos/ds.jpg", width: "300px") %>
+      <%= link_to 'GHS', 'https://www.ghs.org/healthcareservices/medicine/endocrinology-diabetes/' %>
+    </div>
+  </div>
+
+  <div>
+    <h2> Latest Advances In Diabetic Care: </h2>
+    <div class="logos_2">
+      <%= image_tag("logos/advances.jpg", width: "300px") %>
+      <%= link_to 'WebMD', 'https://www.webmd.com/diabetes/features/diabetes-treatment-trends#1' %>
+    </div>
+  </div>
+
+  <div>
+    <h2> Scholarly Publications On Diabetes Care: </h2>
+    <div class="logos_3">
+      <%= image_tag("logos/scholar.jpg", width: "300px") %>
+      <%= link_to 'CDC.GOV', 'https://www.cdc.gov/diabetes/library/index.html' %>
+
+      <%= link_to 'American Diabetes Association', 'http://www.diabetesjournals.org/' %>
+    </div>
+  </div>
+<%= yield %>
+</body>
+</html>

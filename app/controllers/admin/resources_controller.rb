@@ -8,9 +8,9 @@ class Admin::ResourcesController < ApplicationController
     @resources = Resource.new
   end
 
-  def show
-    @resources = Resource.find(params[:title] [:url] [:category])
-  end
+  # def show
+  #   @resources = Resource.find(params[:title] [:url] [:category])
+  # end
 
   def update
    @resources = Resource.find(params[:title] [:url] [:category])

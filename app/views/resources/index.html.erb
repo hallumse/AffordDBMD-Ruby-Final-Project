@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 <body>
   <h1> List of Diabetes Specific Resources: </h1>
 
@@ -30,9 +30,12 @@
   <div>
     <h2> Scholarly Publications On Diabetes Care: </h2>
     <div class="logos_3">
+      <%= image_tag("logos/scholar.jpg", width: "300px") %>
+      <%= link_to 'CDC.GOV', 'https://www.cdc.gov/diabetes/library/index.html' %>
 
+      <%= link_to 'American Diabetes Association', 'http://www.diabetesjournals.org/' %>
     </div>
   </div>
-  <%= yield %>
+<%= yield %>
 </body>
 </html>
