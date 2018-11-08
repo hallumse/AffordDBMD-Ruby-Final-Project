@@ -39,7 +39,10 @@ gem 'react-rails'
 
 gem 'nokogiri'
 gem 'capybara', '>= 2.15'
-gem 'selenium-webdriver'
+gem 'capybara-selenium'
+#gem 'selenium-webdriver'
+#gem 'poltergeist'
+#gem 'launchy'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'mini_magick'
@@ -52,7 +55,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'kaminari'

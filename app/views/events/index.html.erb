@@ -1,1 +1,41 @@
-<h1> List of Diabetes Specific Events In Your Area: </h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AffordDBMBEtoria</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <h1> List of Diabetes Specific Events In Your Area: </h1>
+
+  <div>
+    <h2> Tour De Cure: </h2>
+    <div class="logos_1">
+      <%= image_tag("logos/runner.jpg", width: "300px") %>
+      <%= link_to 'American Diabetes Association', 'http://main.diabetes.org/site/TR/TourdeCure/TourAdmin?fr_id=12748&pg=entry' %>
+    </div>
+  </div>
+
+  <div>
+    <h2> Juvenile Diabetes Research Foundation: </h2>
+    <div class="logos_2">
+      <%= image_tag("logos/jdrf.jpg", width: "300px") %>
+      <%= link_to 'JDRF', 'https://www.jdrf.org/gwc/events/jdrf-2019-upstate-gala/' %>
+    </div>
+  </div>
+
+<!--   <div>
+    <h2> Scholarly Publications On Diabetes Care: </h2>
+    <div class="logos_3">
+      <%= image_tag("logos/scholar.jpg", width: "300px") %>
+      <%= link_to 'CDC.GOV', 'https://www.cdc.gov/diabetes/library/index.html' %>
+
+      <%= link_to 'American Diabetes Association', 'http://www.diabetesjournals.org/' %>
+    </div>
+  </div> -->
+<%= yield %>
+</body>
+</html>
