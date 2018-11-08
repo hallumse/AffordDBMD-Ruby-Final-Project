@@ -1,17 +1,15 @@
 <div class="c-section">
   <h1 class="c-title c-title--large">Discounts on Diabetic Medications and Testing Supplies:</h1>
 </div>
-<% @pharmacies.each do |pharmacy| %>
-  <div class="c-section">
-    <%# @supplies.each do |supply| %>
-      <div class="c-card u-margin-bottom-small">
-        <div class="c-section">
-          <h4 class="c-title"><%= pharmacy[:name] %></h4>
-          <h4 class="c-title"><%= pharmacy[:price] %></h4>
-          <%# link_to "Discount", supply_path(supply), class: "c-button c-button--focal" %>
-        </div>
+<div class="c-section">
+  <% @supplies.each do |supply| %>
+  hey
+    <div class="c-card u-margin-bottom-small">
+      <div class="c-section">
+        <h4 class="c-title"><%= supply.name %></h4>
+        <h4 class="c-title c-title--tiny">$<%= supply.upc %></h4>
+        <%= paginate @supplies %>
       </div>
-  <%# end %>
-  <%# paginate @supplies %>
-  </div>
-<% end %>
+    </div>
+  <% end %>
+</div>

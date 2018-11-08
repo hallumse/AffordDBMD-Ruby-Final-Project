@@ -11,7 +11,7 @@ class Admin::SuppliesController < ApplicationController
   end
 
   def show
-    @supply = Supply.find(params[:name] [:price] [:upc])
+    @supply = Supply.find(params[:id])
   end
 
   def update

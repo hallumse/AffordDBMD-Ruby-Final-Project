@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :supplies, only: [:show, :index]
   resources :events, only: [:show, :index]
   resources :resources, only: [:show, :index]
+  resources :discounts, only: [:show, :index]
 end

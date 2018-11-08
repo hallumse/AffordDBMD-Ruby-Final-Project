@@ -1,0 +1,7 @@
+<% @discounts.each do |discount| %>
+  <div class="c-section">
+    <h1 class="c-title c-title--large"><%= discount.pharmacy %></h1>
+    <h1 class="c-title c-title--large"><%= discount.price %></h1>
+    <a class="c-button c-button--focal" href="#">See Discount</a>
+  </div>
+<% end %>
