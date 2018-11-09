@@ -8,7 +8,8 @@
       <div class="c-section">
         <h4 class="c-title"><%= supply.name %></h4>
         <h4 class="c-title c-title--tiny">$<%= supply.upc %></h4>
-        <%= paginate @supplies %>
+        <%= link_to "Supply", supply_path(supply), class: "c-button c-button--focal" %>
+        <%# paginate @supplies %>
       </div>
     </div>
   <% end %>

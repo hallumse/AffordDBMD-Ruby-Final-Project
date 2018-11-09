@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :events
     resources :resources
     resources :supplies
+    resources :discounts
   end
 
   get '/search', to: "home#search"

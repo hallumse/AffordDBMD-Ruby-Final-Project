@@ -1,5 +1,6 @@
 <div class="c-section">
-  <h1 class="c-title c-title--large"><%= @pharmacy_name %></h1>
-  <h1 class="c-title c-title--large"><%= @price %></h1>
-  <a class="c-button c-button--focal" href="#">Discount</a>
+  <h1 class="c-title c-title--large"><%= @supply.name %></h1>
+  <h3 class="c-title c-title--tiny"><%= @supply.upc %></h3>
+  <!-- <a class="c-button c-button--focal" href="#">Discounts</a> -->
+  <%= link_to "Discounts", discounts_path, class: "c-button c-button--focal" %>
 </div>

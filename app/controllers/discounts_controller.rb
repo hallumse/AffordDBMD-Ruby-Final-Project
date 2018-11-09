@@ -4,17 +4,19 @@ class DiscountsController < ApplicationController
     @discounts = Discount.all
   end
 
-  # def show
-  #   @discounts = discount.find(params[:brand] [:form] [:dosage] [:quantity] [:price] [:pharmacy])
-  #   @med = wellrx
-  #   session = Capybara::Session.new(:selenium)
-  #   session.visit 'https://www.wellrx.com/prescriptions/acarbose/?address=29305'
-  #   session.all('.tabs-content .row').each do |row|
-  #     name = row.all('.columns').first.text
-  #     price = row.find('.pricesm').text
+  def show
+    @discount = Discount.find(params[:id])
 
-  #     Discount.create price: price, pharmacy: name
-  # end
+    # @discounts = discount.find(params[:brand] [:form] [:dosage] [:quantity] [:price] [:pharmacy])
+    # @med = wellrx
+    # session = Capybara::Session.new(:selenium)
+    # session.visit 'https://www.wellrx.com/prescriptions/acarbose/?address=29305'
+    # session.all('.tabs-content .row').each do |row|
+    #   name = row.all('.columns').first.text
+    #   price = row.find('.pricesm').text
+
+    #   Discount.create price: price, pharmacy: name
+  end
 
   # def update
   #  @discounts = Discount.find(params[:brand] [:form] [:dosage] [:quantity] [:price] [:pharmacy])

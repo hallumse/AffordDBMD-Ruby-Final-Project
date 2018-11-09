@@ -25,7 +25,7 @@ class Admin::ResourcesController < ApplicationController
   end
 
   def edit
-    @resources = Resource.find(params[:id])
+    @resource = Resource.find(params[:id])
   end
 
   def destroy

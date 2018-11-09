@@ -3,5 +3,6 @@
     <h1 class="c-title c-title--large"><%= discount.pharmacy %></h1>
     <h1 class="c-title c-title--large"><%= discount.price %></h1>
     <a class="c-button c-button--focal" href="#">See Discount</a>
+    <%= link_to "See Discounts", discount_path(discount), class: "c-button c-button--focal" %>
   </div>
 <% end %>
