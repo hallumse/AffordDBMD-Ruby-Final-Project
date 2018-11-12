@@ -14,7 +14,7 @@ User.create!(name: "Tori Hall", email: "tori@tori_hall.dev", password: "testing1
 
 40.times do
   Supply.create!({
-    name: "Dr. #{Faker::Name.first_name}'s Testing Strips",
+    name: "Pharmacy #{Faker::Name.first_name}'s Diabetic Discounts",
     upc: SecureRandom.hex(10)
   })
 end

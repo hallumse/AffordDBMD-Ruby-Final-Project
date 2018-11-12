@@ -1,13 +1,12 @@
 class SuppliesController < ApplicationController
 
   def index
-
-    # @supplies = Supply.all
-
-    @supplies = Supply.order(:name).page(params[:page])
-
-    # @zipcode = User.zipcode Need to add user zip to db
-
+    if params[:search]
+      # do search stuff here
+      # Supply.search_by_name(params[:search])
+    else
+      @supplies = Supply.order(:name).page(params[:page])
+    end
   end
 
   def show
