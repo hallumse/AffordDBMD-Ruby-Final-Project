@@ -1,12 +1,13 @@
 require 'capybara'
 class DiscountsController < ApplicationController
   def index
-    @discounts = Discount.all
+    @supply = Supply.find(params[:supply_id])
+    @discounts = @supply.discounts
   end
 
   def show
     @discount = Discount.find(params[:id])
-    binding.pry
+    # binding.pry
 
     # @discounts = discount.find(params[:brand] [:form] [:dosage] [:quantity] [:price] [:pharmacy])
     # @med = wellrx

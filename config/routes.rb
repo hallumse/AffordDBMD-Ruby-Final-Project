@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   end
 
   get '/search', to: "home#search"
-  resources :supplies, only: [:show, :index]
+  resources :supplies, only: :index do
+    resources :discounts, only: [:index, :show]
+  end
   resources :events, only: [:show, :index]
   resources :resources, only: [:show, :index]
   resources :discounts, only: [:show, :index] do

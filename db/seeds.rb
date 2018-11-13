@@ -11,90 +11,21 @@ require 'faker'
 User.create!(name: "asdf", email: "asdf@asdf.com", password: "testing")
 
 User.create!(name: "Tori Hall", email: "tori@tori_hall.dev", password: "testing1")
-brands = ["Acarbose", "One Touch", "Metformin", "Miglitol", "Lancets", "Insulin", "Diabetic"]
-40.times do
+
+supplies = [
+  { name: "Testing Strips", brand: "One Touch" },
+  { name: "Ultra Thin Lancets", brand: "One Touch" },
+  { name: "Alcohol Swabs", brand: "Easy Touch" },
+  { name: "Diabetic Medication", brand: "Acarbose" },
+  { name: "Diabetic Medication", brand: "Metformin HCL" },
+  { name: "Diabetic Medication", brand: "Miglitol" },
+  { name: "Insulin Syringe", brand: "" },
+  { name: "Cough Medicine", brand: "Diabetic Tussin DM" }
+]
+supplies.each do |supply|
   Supply.create!({
-    name: "Pharmacy #{Faker::Name.first_name}'s Diabetic Discounts",
+    name: supply[:name],
     upc: SecureRandom.hex(10),
-    brand: brands.sample
+    brand: supply[:brand]
   })
 end
-
-[
-  {
-    form: "tablet",
-    dosage: "10mg",
-    quantity: "30",
-    price: "50.00",
-    pharmacy: "Walgreens",
-    supply_id: 1
-  },
-  {
-    form: "tablet",
-    dosage: "10mg",
-    quantity: "30",
-    price: "30.00",
-    pharmacy: "Walmart",
-    supply_id: 1
-  },
-  {
-    form: "tablet",
-    dosage: "10mg",
-    quantity: "30",
-    price: "42.00",
-    pharmacy: "CVS",
-    supply_id: 1
-  },
-  {
-    form: "testing strips",
-    dosage: "1 strip",
-    quantity: "30 strips",
-    price: "10.00",
-    pharmacy: "Walmart",
-    supply_id: 2
-  },
-  {
-    form: "testing strips",
-    dosage: "1 strip",
-    quantity: "30 strips",
-    price: "30.00",
-    pharmacy: "Walgreens",
-    supply_id: 2
-  },
-  {
-   form: "testing strips",
-   dosage: "1 strip",
-   quantity: "30 strips",
-   price: "35.00",
-   pharmacy: "CVS",
-   supply_id: 2
- },
- {
-   form: "lancet",
-   dosage: "1 lancet",
-   quantity: "1 lancet",
-   price: "15.99",
-   pharmacy: "Walmart",
-   supply_id: 3
- },
- {
-   form: "lancet",
-   dosage: "1 lancet",
-   quantity: "1 lancet",
-   price: "19.99",
-   pharmacy: "Walgreens",
-   supply_id: 3
- },
-  {
-   form: "lancet",
-   dosage: "1 lancet",
-   quantity: "1 lancet",
-   price: "21.99",
-   pharmacy: "CVS",
-   supply_id: 3
- },
-].each do |item_data|
-  Discount.create(item_data)
-end
-
-p "Created #{Discount.count} entries."

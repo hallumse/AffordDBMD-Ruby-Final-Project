@@ -23,4 +23,7 @@ class User < ApplicationRecord
       )
     end
   end
+
+  def notify_about_discount(discount_id)
+  end
 end
