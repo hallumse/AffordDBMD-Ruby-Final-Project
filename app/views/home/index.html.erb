@@ -1,10 +1,10 @@
 <h1> Welcome To AffordDBMD </h1>
 
- <%= link_to 'Events', controller: 'events', class: "c-button c-button--focal 1" %> <%= link_to 'Resources', controller: 'resources', class: "c-button c-button--focal 1" %>
+ <%= link_to "Events", events_path(@events), class: "c-button c-button--focal 1" %> <%= link_to "Resources", resources_path(@resources), class: "c-button c-button--focal 1" %>
 
  <p class="lead">Use This Search To Quickly Find Discounts On Diabetic Medications And Testing Supplies In Your Area: </p>
   <p><%= form_tag supplies_path, :method => :get do %>
     <%= text_field_tag :search, params[:search], placeholder: "e.g. Testing Strips" %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= submit_tag "Search", :name => nil, :brand => nil %>
   </p>
   <% end %>

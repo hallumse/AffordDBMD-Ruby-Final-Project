@@ -11,17 +11,17 @@ require 'faker'
 User.create!(name: "asdf", email: "asdf@asdf.com", password: "testing")
 
 User.create!(name: "Tori Hall", email: "tori@tori_hall.dev", password: "testing1")
-
+brands = ["Acarbose", "One Touch", "Metformin", "Miglitol", "Lancets", "Insulin", "Diabetic"]
 40.times do
   Supply.create!({
     name: "Pharmacy #{Faker::Name.first_name}'s Diabetic Discounts",
-    upc: SecureRandom.hex(10)
+    upc: SecureRandom.hex(10),
+    brand: brands.sample
   })
 end
 
 [
   {
-    brand: "Acarbose",
     form: "tablet",
     dosage: "10mg",
     quantity: "30",
@@ -30,7 +30,6 @@ end
     supply_id: 1
   },
   {
-    brand: "Acarbose",
     form: "tablet",
     dosage: "10mg",
     quantity: "30",
@@ -39,7 +38,6 @@ end
     supply_id: 1
   },
   {
-    brand: "Acarbose",
     form: "tablet",
     dosage: "10mg",
     quantity: "30",
@@ -48,7 +46,6 @@ end
     supply_id: 1
   },
   {
-    brand: "One Touch",
     form: "testing strips",
     dosage: "1 strip",
     quantity: "30 strips",
@@ -57,7 +54,6 @@ end
     supply_id: 2
   },
   {
-    brand: "One Touch",
     form: "testing strips",
     dosage: "1 strip",
     quantity: "30 strips",
@@ -66,7 +62,6 @@ end
     supply_id: 2
   },
   {
-   brand: "One Touch",
    form: "testing strips",
    dosage: "1 strip",
    quantity: "30 strips",
@@ -75,7 +70,6 @@ end
    supply_id: 2
  },
  {
-   brand: "Accu-Chek",
    form: "lancet",
    dosage: "1 lancet",
    quantity: "1 lancet",
@@ -84,7 +78,6 @@ end
    supply_id: 3
  },
  {
-   brand: "Accu-Chek",
    form: "lancet",
    dosage: "1 lancet",
    quantity: "1 lancet",
@@ -93,7 +86,6 @@ end
    supply_id: 3
  },
   {
-   brand: "Accu-Chek",
    form: "lancet",
    dosage: "1 lancet",
    quantity: "1 lancet",

@@ -3,7 +3,7 @@ class SuppliesController < ApplicationController
   def index
     if params[:search]
       # do search stuff here
-      # Supply.search_by_name(params[:search])
+      @supplies = Supply.search_by_name_and_brand(params[:search])
     else
       @supplies = Supply.order(:name).page(params[:page])
     end

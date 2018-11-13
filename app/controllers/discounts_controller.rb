@@ -6,6 +6,7 @@ class DiscountsController < ApplicationController
 
   def show
     @discount = Discount.find(params[:id])
+    binding.pry
 
     # @discounts = discount.find(params[:brand] [:form] [:dosage] [:quantity] [:price] [:pharmacy])
     # @med = wellrx

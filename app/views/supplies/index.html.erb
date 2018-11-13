@@ -3,11 +3,12 @@
 </div>
 <div class="c-section">
   <% @supplies.each do |supply| %>
-  hey
+  <!-- hey -->
     <div class="c-card u-margin-bottom-small">
       <div class="c-section">
         <h4 class="c-title"><%= supply.name %></h4>
-        <h4 class="c-title c-title--tiny">$<%= supply.upc %></h4>
+        <h4 class="c-title"><%= supply.brand %></h4>
+        <h4 class="c-title c-title--tiny">UPC: <%= supply.upc %></h4>
         <%= link_to "Supply", supply_path(supply), class: "c-button c-button--focal" %>
         <%# paginate @supplies %>
       </div>

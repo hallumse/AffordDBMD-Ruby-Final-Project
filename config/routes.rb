@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   resources :supplies, only: [:show, :index]
   resources :events, only: [:show, :index]
   resources :resources, only: [:show, :index]
-  resources :discounts, only: [:show, :index]
+  resources :discounts, only: [:show, :index] do
+    post "notify_about_discount", to: "discounts#notify_about_discount", as: :discounts_notify
+  end
 end
