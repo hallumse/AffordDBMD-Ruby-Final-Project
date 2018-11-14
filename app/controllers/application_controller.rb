@@ -7,7 +7,7 @@ protected
 
   #adapated from https://gist.github.com/withoutwax/46a05861aa4750384df971b641170407
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:zipcode, :email, :password)}
-    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:zipcode, :email, :password, :current_password)}
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:phone, :zipcode, :email, :password)}
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:phone, :zipcode, :email, :password, :current_password)}
   end
 end

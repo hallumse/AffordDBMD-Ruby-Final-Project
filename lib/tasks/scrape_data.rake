@@ -14,27 +14,29 @@ task add_prescriptions: :environment do
   ]
 
   zip_codes = [
-    "29306",
-    "29680",
-    "29607",
-    "29681",
-    "29609",
-    "29611",
-    "29683",
-    "29614",
-    "29613",
-    "29616",
-    "29615",
-    "29687",
-    "29690",
-    "29617",
-    "29627"
+    "29605"
+    # "29306",
+    # "29680",
+    # "29607",
+    # "29681",
+    # "29609",
+    # "29611",
+    # "29683",
+    # "29614",
+    # "29613",
+    # "29616",
+    # "29615",
+    # "29687",
+    # "29690",
+    # "29617",
+    # "29627"
   ]
 
   base_url = "https://www.wellrx.com/prescriptions/"
 
   supplies.each do |supply|
-    url = "#{base_url}/#{supply[:encoded_search_term]}/?address=29305"
+    url = "#{base_url}/#{supply[:encoded_search_term]}/?address=29605"
+    # url = "#{base_url}/#{supply[:encoded_search_term]}/?address=29305"
     session = Capybara.current_session
     session.visit url
 

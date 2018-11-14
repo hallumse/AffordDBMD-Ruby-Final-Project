@@ -17,7 +17,7 @@ task alert_user: :environment do
     users.each do |user|
       client.api.account.messages.create(
         from: '+18644796617',
-        to: user.phone,
+        to: '18643499489',
         body: body
       )
     end
