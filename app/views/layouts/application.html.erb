@@ -11,11 +11,15 @@
   </head>
 
   <body>
+
     <%= render 'layouts/navigation' %>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <!-- # Add a Footer -->
+
+    <div class="card-footer text-muted">
+      Copyright 2018
+    </div>
   </body>
 </html>

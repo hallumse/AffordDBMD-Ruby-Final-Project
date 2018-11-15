@@ -23,4 +23,8 @@ $secondary: red;
     text-align: center;
 }
 
+body.background-image {
+background: url("logos/hospital.jpg");
+}
+
 @import "bootstrap";

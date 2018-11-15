@@ -5,7 +5,7 @@
     <% @supplies.each do |supply| %>
       <div class="card mb-4">
         <div class="card-header">
-          <h4 class="c-title"><%= supply.name %> - <%= supply.brand %></h4>
+          <h4 class="text-secondary"><%= supply.name %> - <%= supply.brand %></h4>
         </div>
         <div class="card-body">
           <h4 class="c-title c-title--tiny">UPC: <%= supply.upc %></h4>
@@ -16,7 +16,7 @@
             <li><%= discount.price %> at <%= discount.pharmacy %></li>
           <% end %>
           </ul>
-          <%= link_to "See more discounts in your area", supply_discounts_path(supply), class: "c-button c-button--focal" %>
+          <button><%= link_to "See more discounts in your area", supply_discounts_path(supply) %></button>
           <%# paginate @supplies %>
         </div>
       </div>

@@ -9,33 +9,31 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-  <h1> List of Diabetes Specific Events In Your Area: </h1>
+  <h2 class="card-header mb-4 display-4"> List of Diabetes Events In Your Area: </h2>
 
   <div class="card mb-4">
-    <h2> Tour De Cure: </h2>
+    <h2 class="text-secondary"> Tour De Cure: </h2>
     <div class="logos_1">
       <%= image_tag("logos/runner.jpg", width: "300px") %>
-      <%= link_to 'American Diabetes Association', 'http://main.diabetes.org/site/TR/TourdeCure/TourAdmin?fr_id=12748&pg=entry' %>
+      <button><%= link_to 'American Diabetes Association', 'http://main.diabetes.org/site/TR/TourdeCure/TourAdmin?fr_id=12748&pg=entry' %></button>
     </div>
   </div>
 
   <div class="card mb-4">
-    <h2> Juvenile Diabetes Research Foundation: </h2>
+    <h2 class="text-secondary"> Juvenile Diabetes Upstate Gala: </h2>
     <div class="logos_2">
-      <%= image_tag("logos/jdrf.jpg", width: "300px") %>
-      <%= link_to 'JDRF', 'https://www.jdrf.org/gwc/events/jdrf-2019-upstate-gala/' %>
+      <%= image_tag("logos/jdrf.jpg", width: "200px") %>
+      <button><%= link_to 'Juvenile Diabetes Research Foundation', 'https://www.jdrf.org/gwc/events/jdrf-2019-upstate-gala/' %></button>
     </div>
   </div>
 
-<!--   <div>
-    <h2> Scholarly Publications On Diabetes Care: </h2>
-    <div class="logos_3">
-      <%= image_tag("logos/scholar.jpg", width: "300px") %>
-      <%= link_to 'CDC.GOV', 'https://www.cdc.gov/diabetes/library/index.html' %>
-
-      <%= link_to 'American Diabetes Association', 'http://www.diabetesjournals.org/' %>
+  <div class="card mb-4">
+    <h2 class="text-secondary"> Black Expo South: </h2>
+    <div class="logos_2">
+      <%= image_tag("logos/health.jpg", width: "200px") %>
+      <button><%= link_to 'Black Expo South', 'https://www.blackexposouth.com/' %></button>
     </div>
-  </div> -->
+  </div>
 <%= yield %>
 </body>
 </html>
