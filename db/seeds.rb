@@ -8,9 +8,7 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(name: "asdf", email: "asdf@asdf.com", password: "testing", phone: "+18643499489", zipcode: "29605")
-
-User.create!(name: "Tori Hall", email: "tori@tori_hall.dev", password: "testing1", phone: "+18643499489", zipcode: "29605")
+User.create!(name: "Tori", email: "tori@hall.com", password: "testing", phone: "+18643499489", zipcode: "29605")
 
 supplies = [
   { name: "Testing Strips", brand: "One Touch" },

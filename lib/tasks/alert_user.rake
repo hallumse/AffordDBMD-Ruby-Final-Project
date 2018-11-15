@@ -1,4 +1,4 @@
-desc "Alerts users to local discounts"
+desc "Alerts users to new local discounts"
 task alert_user: :environment do
   account_sid = Rails.application.credentials.dig(:twilio, :account_sid)
   auth_token = Rails.application.credentials.dig(:twilio, :auth_token)
@@ -7,7 +7,7 @@ task alert_user: :environment do
   # iterate over all discounts
   # In real life, you want to only iterate over _new_ discounts, i.e. discounts that have been
   # created in your db in the past ~24 hours, for example.
-  Discount.where('created_at > ?', 1.hour.ago) do |discount|
+  Discount.where('created_at < ?', 1.hour.ago) do |discount|
     # find users that match the individual discount's zip code
     users = User.where(zipcode: discount.zipcode)
 
