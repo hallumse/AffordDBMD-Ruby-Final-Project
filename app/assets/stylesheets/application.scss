@@ -12,4 +12,15 @@
 * It is generally better to create a new file per style scope.
 *
 */
+
+$primary: #bf11d6;
+$secondary: red;
+
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+}
+
 @import "bootstrap";

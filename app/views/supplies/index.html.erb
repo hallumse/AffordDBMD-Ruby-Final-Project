@@ -1,17 +1,25 @@
-<div class="c-section">
-  <h1 class="c-title c-title--large">Discounts on Diabetic Medications and Testing Supplies:</h1>
-</div>
-<div class="c-section">
-  <% @supplies.each do |supply| %>
-  <!-- hey -->
-    <div class="c-card u-margin-bottom-small">
-      <div class="c-section">
-        <h4 class="c-title"><%= supply.name %></h4>
-        <h4 class="c-title"><%= supply.brand %></h4>
-        <h4 class="c-title c-title--tiny">UPC: <%= supply.upc %></h4>
-        <%= link_to "Discounts", supply_discounts_path(supply), class: "c-button c-button--focal" %>
-        <%# paginate @supplies %>
+<div class="container">
+
+  <h1 class="card-header mb-4 display-4">Local Discounts on Diabetic Medications and Testing Supplies:</h1>
+  <div class="">
+    <% @supplies.each do |supply| %>
+      <div class="card mb-4">
+        <div class="card-header">
+          <h4 class="c-title"><%= supply.name %> - <%= supply.brand %></h4>
+        </div>
+        <div class="card-body">
+          <h4 class="c-title c-title--tiny">UPC: <%= supply.upc %></h4>
+          <% local_discounts = supply.discounts.local_to_user(current_user).first(4) %>
+          <% discounts = local_discounts.any? ? local_discounts : supply.discounts.first(4) %>
+          <ul>
+          <% discounts.each do |discount| %>
+            <li><%= discount.price %> at <%= discount.pharmacy %></li>
+          <% end %>
+          </ul>
+          <%= link_to "See more discounts in your area", supply_discounts_path(supply), class: "c-button c-button--focal" %>
+          <%# paginate @supplies %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
