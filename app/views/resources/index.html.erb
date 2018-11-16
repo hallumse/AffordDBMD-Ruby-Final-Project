@@ -1,41 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>AffordDBMBEtoria</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<h2 class="mb-4 display-4 shadow-lg p-3 mb-5 bg-white rounded">List of Diabetes Specific Resources</h2>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-<body>
-  <h1 class="card-header mb-4 display-4"> List of Diabetes Specific Resources: </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+         <%= image_tag("logos/ds.jpg", class: "card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title">Diabetes Care Providers In Your Area</h5>
+          <h6 class="card-subtitle mb-2 text-muted">November 16, 2018</h6>
+          <p class="card-text">Endocrinologists treat disorders of the endocrine system—the glands and the hormones they make. These disorders include diabetes, hyperthyroidism, and other conditions related to the pituitary, thyroid, adrenals, ovaries, testes and pancreas. Endocrinologists also deal with metabolism, or all the biochemical processes that make your body work, including how your body changes food into energy and how it grows...</p>
+          <%= link_to 'Greenville Hospital System', 'https://www.ghs.org/healthcareservices/medicine/endocrinology-diabetes/', class: "btn btn-primary btn-block" %>
+        </div>
+      </div>
+    </div>
 
-  <div class="card mb-4">
-    <h2 class="text-secondary"> Diabetes Care Providers In Your Area: </h2>
-    <div class="logos_1">
-      <%= image_tag("logos/ds.jpg", width: "200px") %>
-      <button><%= link_to 'Greenville Hospital System', 'https://www.ghs.org/healthcareservices/medicine/endocrinology-diabetes/' %></button>
+    <div class="col-sm-4">
+      <div class="card">
+         <%= image_tag("logos/advances.jpg", class: "card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title">Latest Advances In Diabetic Care</h5>
+          <h6 class="card-subtitle mb-2 text-muted">November 16, 2018</h6>
+          <p class="card-text">Diabetes treatment gets better every day...In the meantime, new medications and insulin devices can make it easier and safer to live with diabetes..."We're getting more and more options," says Michael German, MD, clinical director of the Diabetes Center at the University of California, San Francisco. "That's good because no two people with diabetes are the same. It helps us get the right medicine for each person."</p>
+          <%= link_to 'WebMD', 'https://www.webmd.com/diabetes/features/diabetes-treatment-trends#1', class: "btn btn-primary btn-block" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card">
+         <%= image_tag("logos/scholar.jpg", class: "card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title">Scholarly Publications On Diabetes Care</h5>
+          <h6 class="card-subtitle mb-2 text-muted">November 16, 2018</h6>
+          <p class="card-text">Although you can wash away sugar spilled on a
+          table, you cannot wash away a high blood sugar level by drinking water. However, you can control diabetes by eating healthy food, being physically active, controlling your weight, seeing your medical
+          team regularly, taking prescribed medications, and
+          monitoring your blood sugar often...The main sugar found in the...</p>
+          <%= link_to 'Centers for Disease Control', 'https://www.cdc.gov/diabetes/library/index.html', class: "btn btn-primary btn-block" %>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="card mb-4">
-    <h2 class="text-secondary"> Latest Advances In Diabetic Care: </h2>
-    <div class="logos_2">
-      <%= image_tag("logos/advances.jpg", width: "200px") %>
-      <button><%= link_to 'WebMD', 'https://www.webmd.com/diabetes/features/diabetes-treatment-trends#1' %></button>
-    </div>
-  </div>
-
-  <div class="card mb-4">
-    <h2 class="text-secondary"> Scholarly Publications On Diabetes Care: </h2>
-    <div class="logos_3">
-      <%= image_tag("logos/scholar.jpg", width: "200px") %>
-      <button><%= link_to 'Centers for Disease Control and Prevention', 'https://www.cdc.gov/diabetes/library/index.html' %></button>
-
-      <button><%= link_to 'American Diabetes Association', 'http://www.diabetesjournals.org/' %></button>
-    </div>
-  </div>
-<%= yield %>
-</body>
-</html>
+</div>
