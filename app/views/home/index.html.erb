@@ -1,5 +1,4 @@
-<body class="background-image">
-  <div class="application">
+<div class="background-image">
   <div class="container">
     <div class="jumbotron">
       <h1 class="display-4"> Welcome To AffordDBMD </h1>
@@ -8,13 +7,13 @@
       </p>
       <%= form_tag supplies_path, :method => :get do %>
         <div class="form-group">
-        <%= text_field_tag :search, params[:search], placeholder: "e.g. Testing Strips", class: "form-control" %>
-        <small id="searchHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        <%= submit_tag "Search", :name => nil, :brand => nil, class: "btn btn-primary btn-lg" %>
+        <%= text_field_tag :search, params[:search], placeholder: "e.g. Testing Strips", class: "form-control form-control-lg home-search" %>
+<!--         <small id="searchHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        <%= submit_tag "Search", :name => nil, :brand => nil,
+              class: "btn btn-primary btn-block btn-lg mt-3" %>
         </div>
       <% end %>
     </div>
   </div>
   <%# image_tag('logos/doctor.jpg') %>
-  </div>
-</body>
+</div>

@@ -1,23 +1,31 @@
-<div class="container">
+<h1 class="card-header mb-4 display-4">Local Discounts on Diabetic Medications and Testing Supplies</h1>
 
-  <h1 class="card-header mb-4 display-4">Local Discounts on Diabetic Medications and Testing Supplies:</h1>
-  <div class="">
+<div class="container">
+  <div class="row">
     <% @supplies.each do |supply| %>
-      <div class="card mb-4">
-        <div class="card-header">
-          <h4 class="text-secondary"><%= supply.name %> - <%= supply.brand %></h4>
-        </div>
-        <div class="card-body">
-          <h4 class="c-title c-title--tiny">UPC: <%= supply.upc %></h4>
-          <% local_discounts = supply.discounts.local_to_user(current_user).first(4) %>
-          <% discounts = local_discounts.any? ? local_discounts : supply.discounts.first(4) %>
-          <ul>
-          <% discounts.each do |discount| %>
-            <li><%= discount.price %> at <%= discount.pharmacy %></li>
-          <% end %>
-          </ul>
-          <button><%= link_to "See more discounts in your area", supply_discounts_path(supply) %></button>
-          <%# paginate @supplies %>
+      <div class="col-sm-6">
+        <div class="card shadow-sm mb-4">
+          <h4 class="card-header bg-secondary text-white">
+            <%= supply.brand %> <%= supply.name %>
+          </h4>
+
+          <div class="card-body">
+            <h4>UPC: <%= supply.upc %></h4>
+            <% if current_user %>
+              <% local_discounts = supply.discounts.local_to_user(current_user).first(10) %>
+              <% discounts = local_discounts.any? ? local_discounts : supply.discounts.first(2) %>
+            <% else %>
+              <% discounts = supply.discounts.first(2) %>
+            <% end %>
+            <dl class="row">
+              <% discounts.each do |discount| %>
+                <dt class="col-sm-9"><%= discount.pharmacy %></dt>
+                <dd class="col-sm-3"><%= discount.price %></dd>
+              <% end %>
+            </dl>
+            <%= link_to "See more discounts in your area", supply_discounts_path(supply), class: "btn btn-primary" %>
+            <%# paginate @supplies %>
+          </div>
         </div>
       </div>
     <% end %>
