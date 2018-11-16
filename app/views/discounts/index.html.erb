@@ -1,19 +1,17 @@
-<h4 class="text-secondary"><%= @supply.name %> <%= @supply.brand %></h4>
-<% @discounts.each do |discount| %>
-  <div class="container">
-    <!-- <div class="row"> -->
-      <div class="c-section">
-        <div class="col-sm-4">
-          <div class="card mb-4">
-            <div class="card-header">
-              <h3><%= discount.pharmacy %></h3>
-              <h3 class="text-primary"><%= discount.price %></h3>
-          <%# link_to "Send to phone", "#", class: "btn btn-primary" %>
-          <%# link_to "See Discount", discount_path(discount), class: "c-button c-button--focal" %>
-            </div>
+<h2 class="mb-4 display-4 shadow-lg p-3 mb-5 bg-white rounded"><%= @supply.name %> <%= @supply.brand %></h2>
+<div class="container">
+  <div class="row">
+    <% @discounts.each do |discount| %>
+      <div class="col-sm-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3><%= discount.pharmacy %></h3>
+            <h3 class="text-primary"><%= discount.price %></h3>
+        <%# link_to "Send to phone", "#", class: "btn btn-primary" %>
+        <%# link_to "See Discount", discount_path(discount), class: "c-button c-button--focal" %>
           </div>
         </div>
       </div>
-    <!-- </div> -->
+    <% end %>
   </div>
-<% end %>
+</div>

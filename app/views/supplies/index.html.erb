@@ -1,29 +1,47 @@
-<h1 class="card-header mb-4 display-4 shadow-lg p-3 mb-5 bg-white rounded">Local Discounts on Diabetic Medications and Testing Supplies</h1>
+<h1 class="display-4 shadow-lg p-5 mb-5 bg-white rounded">Local Discounts on Diabetic Medications and Testing Supplies</h1>
 
 <div class="container">
   <div class="row">
     <% @supplies.each do |supply| %>
       <div class="col-sm-6">
         <div class="card shadow-sm mb-4">
-          <h4 class="card-header bg-secondary text-white">
+          <h4 class="card-header bg-dark text-white text-center">
             <%= supply.brand %> <%= supply.name %>
           </h4>
 
           <div class="card-body">
-            <h4>UPC: <%= supply.upc %></h4>
+            <h6 class="card-subtitle text-center">UPC <%= supply.upc %></h6>
             <% if current_user %>
-              <% local_discounts = supply.discounts.local_to_user(current_user).first(10) %>
-              <% discounts = local_discounts.any? ? local_discounts : supply.discounts.first(2) %>
+              <% local_discounts = supply.discounts.local_to_user(current_user).first(4) %>
+              <% discounts = local_discounts.any? ? local_discounts : supply.discounts.first(4) %>
             <% else %>
-              <% discounts = supply.discounts.first(2) %>
+              <% discounts = supply.discounts.first(4) %>
             <% end %>
-            <dl class="row">
-              <% discounts.each do |discount| %>
-                <dt class="col-sm-9"><%= discount.pharmacy %></dt>
-                <dd class="col-sm-3"><%= discount.price %></dd>
-              <% end %>
-            </dl>
-            <%= link_to "See more discounts in your area", supply_discounts_path(supply), class: "btn btn-primary" %>
+            <div class="m-4">
+              <dl class="row">
+                <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Pharmacy</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <% discounts.each do |discount| %>
+                    <tr>
+                      <td><%= discount.pharmacy.titleize %></td>
+                      <td><%= discount.price %></td>
+                    </tr>
+                  <% end %>
+                  <tr>
+                    <td colspan=2>
+                      <%= link_to "See more discounts in your area", supply_discounts_path(supply), class: "btn btn-primary p-2 btn-block" %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <%# paginate @supplies %>
           </div>
         </div>
